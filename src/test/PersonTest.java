@@ -11,8 +11,8 @@ public class PersonTest {
     @Test
     public void getAgeTest(){
         //Given
-        Person p1 = new Person();
-        p1.birthday = LocalDate.of(2017, 1, 1);
+        LocalDate birthday = LocalDate.of(2017, 1, 1);
+        Person p1 = new Person("Fred", birthday, Person.Sex.MALE, "yoohoo@yahoo.com");
         int expected = p1.birthday.until(LocalDate.now()).getYears();
 
         //When

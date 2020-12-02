@@ -5,17 +5,17 @@ public class Main {
 
     public static void main(String[] args){
 
-        class overTwentyOne implements CheckPerson{
+        CheckPerson isFemale = new CheckPerson() {
 
             public boolean test(Person p) {
-                return (p.getAge() > 21);
+                return (p.gender.equals(Person.Sex.FEMALE));
             }
 
-        }
+        };
 
         SocialNetwork sn = new SocialNetwork();
-        CheckPerson criteria = new overTwentyOne();
-        SocialNetworkSearcher.printPersons(sn.members, criteria);
+
+        SocialNetworkSearcher.printPersons(sn.members, isFemale);
 
 
     }
